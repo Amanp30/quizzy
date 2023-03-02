@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    padding: 0%;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto',
+        sans-serif;
+    /* -webkit-tap-highlight-color: transparent; */
+}
+
+.displaynone {
+    display: none;
+}
+
+.radioinput {
+    width: 1.5em;
+    min-width: 1.5em;
+    height: 1.5em;
+    min-height: 1.5em;
+}
+
+
+.quizalert {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(107, 96, 96, 0.285);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+    /* apply the blur effect to the outer div only */
+}
+
+.alertinside {
+    background-color: white;
+    width: 25%;
+    padding: 1em;
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.alertinside p {
+    margin-bottom: .8em;
+}
+
+.alertinside button {
+    padding: .8em .8em;
+    width: 100% !important;
+    min-width: 8em;
+    border-radius: .5em;
+    border: none;
+    font-weight: 600;
+}
+
+@media (max-width:800px) {
+    .alertinside {
+        width: 90%;
+    }
+}
+
+.quizradio {
+    display: flex;
+    align-items: center;
+    margin-bottom: .8em;
+    font-size: 1.4em;
+}
+
+.quizradio label {
+    margin-left: .5em;
+}
+
+button.check {
+    padding: .4em .8em;
+    background: black;
+    color: white;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+button.check.disabled {
+    background: dimgrey;
+}
+
+
+.anotherone {
+    position: fixed;
+    bottom: 1em;
+    left: 5%;
+    right: 05%;
+    height: 4em;
+}
+
+
+.thepopup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+
+    flex-direction: column;
+    background: white;
+}
+
+.explaination {
+    height: calc(100% - 2em);
+    overflow-y: scroll;
+    padding: 2em 5%;
+    margin-top: 2em;
+    padding-top: 0;
+    line-height: 1.5em;
+    font-size: large;
+}
+
+
+.popupwala {
+    height: 8em;
+    display: flex;
+    align-items: center;
+    gap: 0.8em;
+    padding: 0 5%;
+    border-radius: 0 0 1.5em 1.5em;
+}
+
+.quizbtn {
+    padding: 0.8em;
+    border: none;
+    border-radius: 0.5em;
+    font-weight: 600;
+}
+
+
+.topaside img {
+    width: 3em;
+}
+
+.topaside h2 {
+    display: none;
+}
+
+.quizdiv {
+    padding: 2em;
+}
+
+@media (min-width:600px) {
+
+    .thequizes {
+        width: 60%;
+        margin: auto;
+        margin-top: 4em;
+
+    }
+
+}
+
+
+
+@media (min-width: 600px) and (max-width: 900px) {
+
+    .thequizes {
+        width: 90%;
+        margin: auto;
+    }
+
+    .loadingsvg svg {
+        max-width: 450px !important;
+    }
+
+
+}
+
+.loadingsvg svg {
+    max-width: 350px;
+}
+
+.showitnot {
+    display: none;
+}
+
+.gridwrap.showityes {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    padding: 0.8em;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 3em;
+    gap: 3em;
+    animation: slide-in 0.5s ease forwards;
+    opacity: 0;
+    transform: translateY(-5%);
+}
+
+@keyframes slide-in {
+    to {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+/* adjust layout for smaller screens */
+@media (max-width: 600px) {
+    .gridwrap.showityes {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .gridwrap.showityes>div {
+        flex-basis: 22%;
+        text-align: center;
+        max-width: 40%;
+        margin: 0.5em;
+    }
+}
+
+.gridwrap.showityes div img {
+    border-radius: 10px;
+}
+
+h1.quizh1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menubtn {
+    align-items: center;
+    display: flex;
+    margin-left: .5em;
+}
+
+.menubtn img {
+    width: 1em;
+    border-radius: 10px;
+}
