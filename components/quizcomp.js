@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Quizalert from "./quizalert";
 import Quizcheck from "./quizcheck";
 import Quizradio from "./quizradio";
+import _ from "lodash";
 
 function Quizcomp({ bank }) {
   const [question, setQuestion] = useState("");
@@ -24,6 +25,26 @@ function Quizcomp({ bank }) {
     return Math.floor(Math.random() * (max - min) + min);
   }
 
+  function customShuffle(array) {
+    let currentIndex = array?.length,
+      temporaryValue,
+      randomIndex;
+
+    // While there remain elements to shuffle
+    while (currentIndex !== 0) {
+      // Pick a remaining element
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      // Swap it with the current element
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+  }
+
   function randompick(bank) {
     const remaining = bank.filter((q, i) => !displayed.includes(i));
     if (remaining.length === 0) {
@@ -34,7 +55,7 @@ function Quizcomp({ bank }) {
     const question = remaining[random];
 
     setQuestion(question.question);
-    setoptions(question.options);
+    setoptions(customShuffle(question.options));
     setcorrectanswer(question.answer);
     setinfo(question.info);
 
@@ -53,6 +74,10 @@ function Quizcomp({ bank }) {
   return (
     <>
       <div className="quizdiv">
+        <p className="counter">
+          {displayed.length}/{bank.length}
+        </p>
+
         <h2 style={{ marginBottom: ".8em" }}> {question}</h2>
 
         <Quizradio options={options} state={selected} setstate={setselected} />

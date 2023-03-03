@@ -3,14 +3,14 @@ import Quizesof from "./quizesof";
 import Link from "next/link";
 import Head from "next/head";
 
-function Layout({ children, theimg, title }) {
+function Layout({ children, theimg, thetitle }) {
   const [showother, setshowother] = useState(false);
   console.log(theimg);
 
   return (
     <>
       <Head>
-        <title>{title} - Quizzy</title>
+        <title>{thetitle} - Quizzy</title>
       </Head>
       <div className="mainlayout">
         <div className="topaside">
@@ -18,8 +18,12 @@ function Layout({ children, theimg, title }) {
             <Link href="/" style={{ textDecoration: "none", color: "black" }}>
               Quizzy
             </Link>{" "}
-            <div className="menubtn" onClick={(e) => setshowother(!showother)}>
+            <div
+              className={showother ? "menubtn fullcolor" : "menubtn"}
+              onClick={(e) => setshowother(!showother)}
+            >
               <img src={theimg} />
+              <span>{"▾"}</span>
             </div>
           </h1>
 

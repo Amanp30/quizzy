@@ -62,6 +62,10 @@
         width: 90%;
     }
 
+    .showhere p {
+        margin-bottom: 2em !important;
+    }
+
     .languagesof {
         grid-template-columns: 45% 45%;
         grid-column-gap: 10%;

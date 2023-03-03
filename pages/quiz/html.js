@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../../components/layout";
-import jsbank from "../../data/bank/javascript";
+import htmlbank from "../../data/bank/html";
 
 import dynamic from "next/dynamic";
 const Quizcomp = dynamic(() => import("../../components/quizcomp"), {
@@ -35,8 +35,8 @@ const Quizcomp = dynamic(() => import("../../components/quizcomp"), {
 function index() {
   return (
     <>
-      <Layout theimg="/icons/html.svg">
-        <Quizcomp bank={jsbank} title="Html" />
+      <Layout theimg="/icons/html.svg" thetitle="Html">
+        <Quizcomp bank={htmlbank} />
       </Layout>
     </>
   );

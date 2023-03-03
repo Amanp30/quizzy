@@ -35,8 +35,8 @@ const Quizcomp = dynamic(() => import("../../components/quizcomp"), {
 function index() {
   return (
     <>
-      <Layout theimg="/icons/js.svg">
-        <Quizcomp bank={jsbank} title="Javascript" />
+      <Layout theimg="/icons/js.svg" thetitle="Javascript">
+        <Quizcomp bank={jsbank} />
       </Layout>
     </>
   );
