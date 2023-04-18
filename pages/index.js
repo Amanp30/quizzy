@@ -7,7 +7,7 @@ function index() {
   return (
     <>
       <Head>
-        <title>Quizzy</title>{" "}
+        <title>Quizzy</title>{" "}<meta name="google-site-verification" content="vlY0LNzyaUMGMqb341rFNVnwdOSCIYn2vIJHmEVZBTc" />
       </Head>
       <div className={css.showhere}>
         <h1>QUIZZY</h1>
